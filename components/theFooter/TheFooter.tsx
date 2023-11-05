@@ -1,23 +1,29 @@
-import React from 'react';
-import Button from './Button';
+"use client"
+
+import { Dispatch, SetStateAction } from 'react';
+import CustomButton from '../CustomButton';
 import checkIcon from '@/public/icons/check.svg';
+import { TCategory } from '@/types/Tcategory';
 
-type Props = {};
+type Props = {
+    cancelFunction: () => void
+    saveFunction: () => void
+} 
 
-const TheFooter = (props: Props) => {
+const TheFooter = ({cancelFunction, saveFunction}: Props) => {
 	return (
 		<footer className='bg-footerBg z-20 fixed w-full text-xs sm:text-base bottom-0 py-5'>
 			<div className='wrapper flex gap-[1.6em]'>
-				<Button
+				<CustomButton
 					title='Save Changes'
 					styles=' bg-saveButtonGreenBg border-transparent'
-					onClick={() => {}}
+					onClick={saveFunction}
 					Icon={checkIcon}
 				/>
-				<Button
+				<CustomButton
 					title='Cansel'
 					styles='border-[#424454]'
-					onClick={() => {}}
+					onClick={cancelFunction}
 				/>
 			</div>
 		</footer>

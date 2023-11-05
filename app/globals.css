@@ -7,5 +7,16 @@ body::-webkit-scrollbar {
 }
 
 .wrapper {
-  @apply max-w-[1320px] px-5 m-auto;
+	@apply max-w-[1320px] px-5 m-auto;
+}
+
+/*this shoudnt be here but its too little to create a new file */
+.createCategory__gradient {
+	background: linear-gradient(0deg, #884dfe 0%, #884dfe 100%),
+		linear-gradient(104deg, #a139fd 11.26%, #50bdfc 90.79%);
+}
+
+.category__article {
+	@apply w-full border-2 border-[#323443] bg-itemBg text-sm p-3 sm:p-5 leading-3
+    hover:scale-[1.02] transition-transform flex flex-col gap-3 sm:gap-0 sm:flex-row sm:justify-between sm:items-center;
 }
