@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import './globals.css';
 import TheHeader from '@/components/theHeader/TheHeader';
-import TheFooter from '@/components/theFooter/TheFooter';
+import DeletePopUp from '@/components/DeletePopUp';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -14,10 +14,9 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang='en'>
-			<body className={`${inter.className} h-[100vh] bg-mainBg`}>
+			<body className={`${inter.className} h-[100vh] bg-mainBg relative`}>
 				<TheHeader />
 				{children}
-				<TheFooter />
 			</body>
 		</html>
 	);

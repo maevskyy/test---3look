@@ -15,9 +15,8 @@ const config: Config = {
         'searchBg': '#30313C',
         'toggleGreen': '#07D41B',
         'saveButtonGreenBg': '#45CB54',
-        'btnPurpleBg': 'linear-gradient(0deg, #884DFE 0%, #884DFE 100%), linear-gradient(104deg, #A139FD 11.26%, #50BDFC 90.79%)'
 
-      }
+      },
     },
   },
   plugins: [],
