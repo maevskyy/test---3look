@@ -1,9 +1,6 @@
 "use client"
-
-import { Dispatch, SetStateAction } from 'react';
 import CustomButton from '../CustomButton';
 import checkIcon from '@/public/icons/check.svg';
-import { TCategory } from '@/types/Tcategory';
 
 type Props = {
     cancelFunction: () => void

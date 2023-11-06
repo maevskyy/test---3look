@@ -1,5 +1,6 @@
 import { PrismaClient } from '@prisma/client'
 
+//some basic settings for types in prisma
 declare global {
     namespace NodeJS {
         interface Global {}

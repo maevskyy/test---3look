@@ -9,7 +9,7 @@ type Props = {
 	itemState: TCategory;
 	setItemState: React.Dispatch<React.SetStateAction<TCategory>>;
 	controls?: DragControls;
-	deleteHanlder?: (id: string) => void;
+	deleteHanlder?: (id: number) => void;
 };
 
 const Actions = ({
@@ -18,27 +18,27 @@ const Actions = ({
 	controls,
 	deleteHanlder,
 }: Props) => {
-	const deleteFunction = (id: string) => {
+    //for deleting category
+	const deleteFunction = (id: number) => {
 		if (deleteHanlder) {
 			deleteHanlder(id);
 		}
 	};
-
+    //for drag and drop
 	const controlersHandler = (e: React.PointerEvent<HTMLDivElement>) => {
 		if (controls) {
 			controls.start(e);
 		}
 	};
-
 	return (
 		<div className='flex items-center sm:gap-5 justify-between relative  select-none'>
 			<Toggle
 				creationForm
-				condition={itemState.condition}
+				condition={itemState.active}
 				setCondition={setItemState}
 			/>
 			<button
-				onClick={() => deleteFunction(itemState.id as string)}
+				onClick={() => deleteFunction(itemState.id as number)}
 			>
 				<Image
 					alt='delete button'
@@ -47,11 +47,11 @@ const Actions = ({
 				/>
 			</button>
 			<div
-				className='w-[15px] h-[25px] cursor-pointer  hidden sm:block absolute top-0	right-0'
+				className='w-[15px] h-[25px] cursor-pointer  absolute top-0	right-0'
 				onPointerDown={controlersHandler}
 			></div>
 			<button
-				className='hidden sm:block'
+				className=''
 			>
 				<Image
 					alt='drag and drop button'

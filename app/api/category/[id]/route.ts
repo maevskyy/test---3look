@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server"
 import prisma from "@/prisma/client"
 
+//update category
 export const PATCH = async (req: NextRequest, { params }: { params: { id: string } }) => {
     const { id: idToUpdate } = params
     const {condition} = await req.json()
@@ -14,7 +15,7 @@ export const PATCH = async (req: NextRequest, { params }: { params: { id: string
 
 }
 
-
+// delete category
 export const DELETE = async (_: any, { params }: { params: { id: string } }) => {
     const { id: idToDelete } = params
     try {

@@ -8,7 +8,7 @@ import Actions from './Actions';
 type Props = {
 	data: TCategory;
 	setAllCategories: any;
-	deleteHanlder: (idToDelete: string) => void;
+	deleteHanlder: (idToDelete: number) => void;
 };
 
 const Category = ({ data, setAllCategories, deleteHanlder }: Props) => {
@@ -19,6 +19,7 @@ const Category = ({ data, setAllCategories, deleteHanlder }: Props) => {
 	const changeTitle = (e: ChangeEvent<HTMLInputElement>) =>
 		setItemState((prev) => ({ ...prev, title: e.target.value }));
 
+    //honestly i forgot what it is
 	useEffect(() => {
 		setAllCategories((prevCategories: TCategory[]) => {
 			const index = prevCategories.findIndex((category) => category.id === itemState.id);

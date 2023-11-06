@@ -1,6 +1,5 @@
 export type TCategory = {
-    id?: string,
+    id: number,
     title: string,
-    condition: boolean
-
+    active: boolean
 }

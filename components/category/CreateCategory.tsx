@@ -10,9 +10,9 @@ type Props = {
 
 const CreateCategory = ({ setNewCategoryState }: Props) => {
 	const [itemState, setItemState] = useState<TCategory>({
-		id: String(Math.floor(Math.random() * 10000)),
+		id: Math.floor(Math.random() * 10000),
 		title: '',
-		condition: false,
+		active: false,
 	});
 
 	const changeTitle = (e: React.ChangeEvent<HTMLInputElement>) => {
